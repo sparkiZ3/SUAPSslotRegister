@@ -1,10 +1,11 @@
+from config import *
 import requests
 import json
 from datetime import datetime, timezone
 
 class SuapsAPI:
     def __init__(self):
-        self.ACCESS_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFMjMyNjQzWSIsImF1dGgiOiJST0xFX1VTRVIiLCJleHAiOjE3NTg4Mjc2Mjl9.AIg03PdJyawtfYmvOEry73OyWVm0eAC-JgP0JPM44kPq6b5d3qGVW0fPYnM1dQf_O7PhxFiR2wM2m6zFjIe3Ag"
+        self.ACCESS_TOKEN = data["API-KEY"]
         self.periodId = self.getCatalogue()[0]["id"]
     
     
@@ -86,6 +87,7 @@ class SuapsAPI:
         print(jour)
         creneaux = self.getCreneaux(activityId,periodeId)
         
+        
         for creneau in creneaux:
             if creneau["jour"] == jour:
                 return creneau["id"],creneau["quota"],creneau["nbInscrits"]
@@ -94,6 +96,8 @@ class SuapsAPI:
     def getCreneauJSON(self,activityId,periodeId ,jour):
         jour=jour.upper()
         creneaux = self.getCreneaux(activityId,periodeId)
+        
+        print(creneaux)
         
         for creneau in creneaux:
             if creneau["jour"] == jour:

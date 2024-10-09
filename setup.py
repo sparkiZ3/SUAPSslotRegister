@@ -1,17 +1,10 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
-    name="SUAPSslotRegister",
-    version="0.1",
-    packages=find_packages(),
-    install_requires=[
-        "requests",  # Ajouter vos dépendances ici
-        "datetime",
-        "json",
-    ],
-    entry_points={
-        "console_scripts": [
-            "mon_projet=mon_projet.main:main",  # Point d'entrée pour les scripts en ligne de commande
-        ],
-    },
+   name='SUAPSslotRegister',
+   version='1.0',
+   description='just a script using the SUAPS API to register to a slot',
+   author='sparkiz3',
+   packages=['SUAPSslotRegister'],  #same as name
+   install_requires=['requests'], #external packages as dependencies
 )

@@ -1,6 +1,6 @@
 # SUAPS slots register
 
-A python program using the SUAPS API to register to a sport slot
+A python program using the SUAPS API to register to a sport slot. I've also used burpSuite to reverse reverse engineer the api to understand how it work
 
 # Installation
 

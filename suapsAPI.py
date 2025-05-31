@@ -1,4 +1,6 @@
-from config import data
+from dotenv import load_dotenv
+import os
+import sys
 import requests
 import json
 from datetime import datetime, timezone
@@ -8,7 +10,8 @@ from logging.handlers import RotatingFileHandler
 
 class SuapsAPI:
     def __init__(self):
-        self.ACCESS_TOKEN = data["API-KEY"]
+        load_dotenv()
+        self.ACCESS_TOKEN = os.getenv("API_KEY")
         self.periodId = self.getCatalogue()[0]["id"]
         handler = RotatingFileHandler('app.log', backupCount=5)
         logging.basicConfig(
@@ -27,6 +30,10 @@ class SuapsAPI:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0",
         }
         response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            logging.error("Error while fetching user datas. Is the API KEY valid ?")
+            print("\033[91mError : Fail to fetch user data\033[0m")
+            sys.exit(0) 
         if value is not None:
             try:
                 return response.json()[value]
@@ -58,7 +65,6 @@ class SuapsAPI:
         }
 
         response = requests.get(url, headers=headers)
-
         return response.json()
     
     def getActivitiesName(self):

@@ -1,5 +1,4 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 build/
-config.py
-SUAPSslotRegister/config.py
+.env

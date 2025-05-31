@@ -1,4 +1,3 @@
-from config import *
 import time
 import locale
 from suapsAPI import SuapsAPI

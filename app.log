@@ -1,5 +1,1 @@
-2024-10-16 20:15:53 - ERROR - Erreur lors de la réservation du créneau{"entityName":"creneau","errorKey":"noPlace","type":"https://www.jhipster.tech/problem/problem-with-message","title":"Pas de place disponible sur ce créneau","status":400,"message":"error.noPlace","params":"creneau"}
-2024-10-16 20:16:57 - ERROR - Erreur lors de la réservation du créneau{"entityName":"creneau","errorKey":"noPlace","type":"https://www.jhipster.tech/problem/problem-with-message","title":"Pas de place disponible sur ce créneau","status":400,"message":"error.noPlace","params":"creneau"}
-2025-05-31 15:29:14 - ERROR - Error while fetching user datas. Is the API KEY valid ?
-2025-05-31 15:29:26 - ERROR - Error while fetching user datas. Is the API KEY valid ?
-2025-05-31 15:30:07 - ERROR - Error while fetching user datas. Is the API KEY valid ?
+
